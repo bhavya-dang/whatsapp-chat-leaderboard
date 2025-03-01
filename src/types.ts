@@ -18,4 +18,5 @@ export interface ChatSummary {
   totalParticipants: number;
   members: ChatMember[];
   mostActiveHour: number;
+  groupName?: string;
 }
