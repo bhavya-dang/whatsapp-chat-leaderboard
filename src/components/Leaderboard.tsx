@@ -19,7 +19,7 @@ interface LeaderboardProps {
 
 export function Leaderboard({ members, groupName }: LeaderboardProps) {
   const sortedMembers = [...members].sort(
-    (a, b) => b.messageCount - a.messageCount,
+    (a, b) => b.messageCount - a.messageCount
   );
 
   return (
@@ -27,7 +27,7 @@ export function Leaderboard({ members, groupName }: LeaderboardProps) {
       <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4">
         <h2 className="text-2xl font-bold text-white flex items-center gap-2">
           <Trophy className="w-6 h-6" />
-          {groupName} <span className="font-semibold">Leaderboard</span>
+          <span className="font-semibold">{groupName} Leaderboard</span>
         </h2>
       </div>
 
@@ -45,10 +45,10 @@ export function Leaderboard({ members, groupName }: LeaderboardProps) {
                   index === 0
                     ? "bg-yellow-400 text-white"
                     : index === 1
-                      ? "bg-gray-300 text-white"
-                      : index === 2
-                        ? "bg-amber-600 text-white"
-                        : "bg-gray-100 text-gray-600"
+                    ? "bg-gray-300 text-white"
+                    : index === 2
+                    ? "bg-amber-600 text-white"
+                    : "bg-gray-100 text-gray-600"
                 }
               `}
               >

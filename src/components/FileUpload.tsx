@@ -13,7 +13,7 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
   const [status, setStatus] = useState<string>("");
 
   const handleFileChange = async (
-    event: React.ChangeEvent<HTMLInputElement>,
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -66,7 +66,7 @@ export function FileUpload({ onFileSelect }: FileUploadProps) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-6">
+    <div className="w-full max-w-md mx-auto -mt-10 p-6">
       {isUploading || isParsing ? (
         <div className="w-full max-w-xs mx-auto">
           <p className="text-sm text-gray-600 mb-2 text-center">{status}</p>

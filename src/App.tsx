@@ -23,9 +23,16 @@ function App() {
               WhatsApp Chat Summarizer
             </a>
           </h1>
+          <p className="flex items-center justify-center w-full font-satoshi font-normal">
+            built by{" "}
+            <a href="http://bhavyadang.in" className="mx-1 hover:underline">
+              Bhavya Dang
+            </a>{" "}
+            with ❤️
+          </p>
 
           {!chatSummary && (
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mt-30">
               Upload your WhatsApp chat export to see insights and statistics
             </p>
           )}

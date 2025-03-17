@@ -2,7 +2,7 @@ import { Coins, Cone } from "lucide-react";
 import type { Message, ChatMember, ChatSummary } from "../types";
 
 export function parseWhatsAppChat(
-  text: string,
+  text: string
 ): Message[] & { groupName: string } {
   const lines = text.split("\n");
   const messages: Message[] = [];
@@ -38,7 +38,7 @@ export function parseWhatsAppChat(
 
       if (
         trimmedSender === "Meta AI" ||
-        trimmedSender === "Group" ||
+        trimmedSender === groupName ||
         trimmedSender.includes("changed the subject") ||
         groupNamePatterns.some((pattern) => pattern.test(content))
       ) {
@@ -81,7 +81,7 @@ export function determineArchetype(messages: Message[]): string {
 }
 
 export function analyzeChatData(
-  messages: Message[],
+  messages: Message[]
 ): ChatSummary & { groupName: string } {
   const memberStats = new Map<string, ChatMember>();
 
@@ -107,7 +107,7 @@ export function analyzeChatData(
   memberStats.forEach((member, name) => {
     member.averageMessageLength = member.wordCount / member.messageCount;
     member.archetype = determineArchetype(
-      messages.filter((m) => m.sender === name),
+      messages.filter((m) => m.sender === name)
     );
   });
 
